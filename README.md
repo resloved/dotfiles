@@ -2,7 +2,7 @@
 
 ## Preview:
 
-![Desktop](http://imgur.com/pDg2Ixv)
+![Desktop](http://i.imgur.com/pDg2Ixv.png)
 
 ## Dependencies:
 
