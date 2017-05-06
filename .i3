@@ -128,16 +128,16 @@ bindsym $mod+9 workspace $ws9
 bindsym $mod+0 workspace $ws10
 
 # move focused container to workspace
-bindsym $mod+ctrl+1 move container to workspace $ws1
-bindsym $mod+ctrl+2 move container to workspace $ws2
-bindsym $mod+ctrl+3 move container to workpsace $ws3
-bindsym $mod+ctrl+4 move container to workpsace $ws4
-bindsym $mod+ctrl+5 move container to workpsace $ws5
-bindsym $mod+ctrl+6 move container to workpsace $ws6
-bindsym $mod+ctrl+7 move container to workpsace $ws7
-bindsym $mod+ctrl+8 move container to workpsace $ws8
-bindsym $mod+ctrl+9 move container to workpsace $ws9
-bindsym $mod+ctrl+0 move container to workpsace $ws10
+bindsym $mod+Ctrl+1 move container to workspace $ws1
+bindsym $mod+Ctrl+2 move container to workspace $ws2
+bindsym $mod+Ctrl+3 move container to workspace $ws3
+bindsym $mod+Ctrl+4 move container to workspace $ws4
+bindsym $mod+Ctrl+5 move container to workspace $ws5
+bindsym $mod+Ctrl+6 move container to workspace $ws6
+bindsym $mod+Ctrl+7 move container to workspace $ws7
+bindsym $mod+Ctrl+8 move container to workspace $ws8
+bindsym $mod+Ctrl+9 move container to workspace $ws9
+bindsym $mod+Ctrl+0 move container to workspace $ws10
 
 # -numpad
 bindsym $mod+Mod2+KP_1 workspace $ws1
@@ -151,16 +151,20 @@ bindsym $mod+Mod2+KP_8 workspace $ws8
 bindsym $mod+Mod2+KP_9 workspace $ws9
 bindsym $mod+Mod2+KP_0 workspace $ws10
 
-bindsym $mod+Shift+Mod2+KP_End move container to    workspace $ws1
-bindsym $mod+Shift+Mod2+KP_Down move container to   workspace $ws2
-bindsym $mod+Shift+Mod2+KP_Next move container to   workspace $ws3
-bindsym $mod+Shift+Mod2+KP_Left move container to   workspace $ws4
-bindsym $mod+Shift+Mod2+KP_Begin move container to  workspace $ws5
-bindsym $mod+Shift+Mod2+KP_Right move container to  workspace $ws6
-bindsym $mod+Shift+Mod2+KP_Home move container to   workspace $ws7
-bindsym $mod+Shift+Mod2+KP_Up move container to     workspace $ws8
-bindsym $mod+Shift+Mod2+KP_Prior move container to  workspace $ws9
-bindsym $mod+Shift+Mod2+KP_Insert move container to workspace $ws10
+bindsym $mod+Ctrl+Mod2+KP_End move container to workspace    $ws1
+bindsym $mod+Ctrl+Mod2+KP_Down move container to workspace   $ws2
+bindsym $mod+Ctrl+Mod2+KP_Next move container to workspace   $ws3
+bindsym $mod+Ctrl+Mod2+KP_Left move container to workspace   $ws4
+bindsym $mod+Ctrl+Mod2+KP_Begin move container to workspace  $ws5
+bindsym $mod+Ctrl+Mod2+KP_Right move container to workspace  $ws6
+bindsym $mod+Ctrl+Mod2+KP_Home move container to workspace   $ws7
+bindsym $mod+Ctrl+Mod2+KP_Up move container to workspace     $ws8
+bindsym $mod+Ctrl+Mod2+KP_Prior move container to workspace  $ws9
+bindsym $mod+Ctrl+Mod2+KP_Insert move container to workspace $ws10
+
+# change workstation monitor
+bindsym $mod+Shift+l move workspace to output right
+bindsym $mod+Shift+h move workspace to output left
 
 # reload the configuration file
 bindsym $mod+Ctrl+c reload
@@ -171,7 +175,7 @@ bindsym $mod+Ctrl+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode 
+        # These bindings trigger as soon as you enter the resize mode
         # Pressing left will shrink the window’s width.
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
@@ -195,8 +199,8 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # lock (github: https://github.com/resloved/lock.sh.git)
-bindsym $mod+ctrl+x exec ~/.i3/lock.sh
-#bindsym $mod+ctrl+x exec i3lock
+bindsym $mod+Ctrl+x exec ~/.i3/lock.sh
+#bindsym $mod+Ctrl+x exec i3lock
 
 # screenshot
 bindsym --release $mod+Print exec scrot -e 'mv $f ~/pictures/screenshots'
@@ -259,9 +263,11 @@ bar {
 # exec python /usr/lib/python3.6/site-packages/powerline/bindings/lemonbar/powerline-lemonbar.py --i3 –height 14 – -f “Source Code Pro for Powerline-6”
 
 # background
-exec_always feh --bg-scale ~/Downloads/circled.png
+set $background "~/pictures/wallpapers/circled.png"
+exec_always feh --bg-scale $background
 
 # application bindings
 bindsym $mod+m exec $music
 bindsym $mod+n exec $browser
 bindsym $mod+t exec chromium --app=https://tweetdeck.twitter.com
+bindsym $mod+Ctrl+t exec chromium --app=https://discordapp.com
