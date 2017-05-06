@@ -171,8 +171,7 @@ bindsym $mod+Ctrl+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
-
+        # These bindings trigger as soon as you enter the resize mode 
         # Pressing left will shrink the window’s width.
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
@@ -195,9 +194,13 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# lock (github: lock.sh)
+# lock (github: https://github.com/resloved/lock.sh.git)
 bindsym $mod+ctrl+x exec ~/.i3/lock.sh
 #bindsym $mod+ctrl+x exec i3lock
+
+# screenshot
+bindsym --release $mod+Print exec scrot -e 'mv $f ~/pictures/screenshots'
+bindsym --release $mod+Ctrl+Print exec scrot -s -e 'mv $f ~/pictures/screenshots'
 
 # media control
 bindsym $mod+i exec playerctl play-pause
