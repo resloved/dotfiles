@@ -24,3 +24,5 @@ Bar -
 Other -
 * General config file cleanup (especially i3)
 * Remove specific file location refrences
+* Pomodoro with powerline support
+* Scratchpad
