@@ -1,39 +1,49 @@
-xterm*faceName: Source Code Pro for Powerline, Source Code Pro Semibold
+*customization: -color
+xterm*termName: xterm-256color
+
+xterm*faceName: Source Code Pro for Powerline
 xterm*faceSize: 10
 
+!border
+xterm*borderWidth: 0
+xterm*internalBorder: 0
+
 ! terminal colours
-*foreground:#CCCCCC
-*background:#1B1D1E
+xterm*foreground:#CCCCCC
+xterm*background:#1B1D1E
 
 !black darkgray
-*color0:    #1B1D1E
-*color8:    #808080
+xterm*color0:    #1B1D1E
+xterm*color8:    #808080
 !darkred red
-*color1:    #FF0044
-*color9:    #F92672
+xterm*color1:    #FF0044
+xterm*color9:    #F92672
 !darkgreen green
-*color2:    #82B414
-*color10:   #A6E22E
+xterm*color2:    #82B414
+xterm*color10:   #A6E22E
 !darkyellow yellow
-*color3:    #FD971F
-*color11:   #E6DB74
+xterm*color3:    #FD971F
+xterm*color11:   #E6DB74
 !darkblue blue
-*color4:    #266C98
-*color12:   #7070F0
+xterm*color4:    #266C98
+xterm*color12:   #7070F0
 !darkmagenta magenta
-*color5:    #AC0CB1
-*color13:   #D63AE1
+xterm*color5:    #AC0CB1
+xterm*color13:   #D63AE1
 !darkcyan cyan
-*color6:    #AE81FF
-*color14:   #66D9EF
+xterm*color6:    #AE81FF
+xterm*color14:   #66D9EF
 !gray white
-*color7:    #CCCCCC
-*color15:   #F8F8F2
+xterm*color7:    #CCCCCC
+xterm*color15:   #F8F8F2
+
 ! ------------------------------------------------------------------------------
 ! ROFI Color theme
 ! ------------------------------------------------------------------------------
 rofi.color-enabled: true
-rofi.color-window: #1b1d1e, #000000, #252525
+rofi.color-window: #1b1d1e, #252525, #252525
 rofi.color-normal: #1b1d1e, #ffffff, #1b1d1e, #e3e3e3, #000000
 rofi.color-active: #1b1d1e, #389bdf, #1b1d1e, #389bdf, #ffffff
 rofi.color-urgent: #1b1d1e, #ff5f00, #1b1d1e, #ff5f00, #ffffff
+rofi.bw: 10
+rofi.font: Source Code Pro 10

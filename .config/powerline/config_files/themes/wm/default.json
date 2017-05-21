@@ -1,0 +1,42 @@
+{
+	"default_module": "powerline.segments.i3wm",
+	"segments": {
+		"left": [
+			{
+				"type": "segment_list",
+				"function": "powerline.listers.i3wm.workspace_lister",
+				"include_modes": ["default"],
+				"segments": [
+					{
+						"function": "workspace",
+						"args": {
+							"strip": true
+						}
+					}
+				]
+			}
+		],
+		"right": [
+			{
+				"function": "scratchpad",
+				"draw_inner_divider": true,
+				"include_modes": ["default"]
+			},
+			{
+				"function": "powerline.segments.common.wthr.weather",
+				"priority": 50
+			},
+			{
+				"function": "powerline.segments.common.time.date"
+			},
+			{
+				"function": "powerline.segments.common.time.date",
+				"name": "time",
+				"args": {
+					"format": "%H:%M",
+					"istime": true
+				}
+			}
+		]
+	}
+}

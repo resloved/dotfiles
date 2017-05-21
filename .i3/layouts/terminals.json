@@ -1,0 +1,79 @@
+// vim:ts=4:sw=4:et
+{
+    "border": "pixel",
+    "current_border_width": 0,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 436,
+       "width": 644,
+       "x": 0,
+       "y": 0
+    },
+    "name": "~/.config/i3/config",
+    "percent": 0.5,
+    "swallows": [
+       {
+       // "class": "^UXTerm$",
+       // "instance": "^xterm$",
+       // "title": "^\\~\\/\\.config\\/i3\\/config$",
+       // "transient_for": "^$"
+       }
+    ],
+    "type": "con"
+}
+
+{
+    // splitv split container with 2 children
+    "border": "normal",
+    "floating": "auto_off",
+    "layout": "splitv",
+    "percent": 0.5,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "pixel",
+            "current_border_width": 0,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 436,
+               "width": 644,
+               "x": 0,
+               "y": 0
+            },
+            "name": "~/.i3/lock.sh",
+            "percent": 0.5,
+            "swallows": [
+               {
+               // "class": "^UXTerm$",
+               // "instance": "^xterm$",
+               // "title": "^\\~\\/\\.i3\\/lock\\.sh$",
+               // "transient_for": "^$"
+               }
+            ],
+            "type": "con"
+        },
+        {
+            "border": "pixel",
+            "current_border_width": 0,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 436,
+               "width": 644,
+               "x": 0,
+               "y": 0
+            },
+            "name": "ben@arch:~",
+            "percent": 0.5,
+            "swallows": [
+               {
+               // "class": "^UXTerm$",
+               // "instance": "^xterm$",
+               // "title": "^ben\\@arch\\:\\~$",
+               // "transient_for": "^$"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+

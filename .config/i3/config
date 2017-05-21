@@ -30,7 +30,7 @@ font pango:Source Code Pro 10
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec xterm -fn xterm-256color
 
 # kill focused window
 bindsym $mod+x kill
@@ -44,7 +44,6 @@ bindsym $mod+x kill
 
 # general variables
 set $browser    "chromium"
-set $term       "xterm"
 set $music      "spotify"
 
 # start rofi
@@ -111,7 +110,7 @@ set $ws4 "4"
 set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
-set $ws8 "8"
+set $ws8 ""
 set $ws9 ""
 set $ws10 ""
 
@@ -180,10 +179,10 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
@@ -206,6 +205,14 @@ bindsym $mod+Ctrl+x exec ~/.i3/lock.sh
 bindsym --release $mod+Print exec scrot -e 'mv $f ~/pictures/screenshots'
 bindsym --release $mod+Ctrl+Print exec scrot -s -e 'mv $f ~/pictures/screenshots'
 
+# screencast (https://www.youtube.com/watch?v=Ja-DgvGPDu8)
+bindsym --release $mod+Scroll_lock exec ~/.i3/screencast.sh
+# -kill
+bindsym --release $mod+shift+Scroll_lock exec killall ffmpeg
+# gifcast (https://unix.stackexchange.com/questions/113695/gif-screencasting-the-unix-way)
+#bindsym --release $mod+ctrl+Scroll_Lock exec ~/.i3/gif.sh
+# -kill
+
 # media control
 bindsym $mod+i exec playerctl play-pause
 bindsym $mod+o exec playerctl previous
@@ -213,7 +220,7 @@ bindsym $mod+p exec playerctl next
 
 # window edge
 hide_edge_borders both
-for_window [class="^.*"] border pixel 0
+for_window [class="^.*"] border pixel 10
 
 # gaps
 set $inner 25
@@ -223,8 +230,8 @@ gaps inner $inner
 gaps outer $outer
 
 # gap toggle
-bindsym $mod+g gaps inner all set $inner; gaps outer all set $outer
-bindsym $mod+Ctrl+g gaps inner all set 0; gaps outer all set 0
+bindsym $mod+g gaps inner all set $inner; gaps outer all set $outer;
+bindsym $mod+Ctrl+g gaps inner all set 0; gaps outer all set 0;
 
 # colors
 set $black      #000000
@@ -245,29 +252,37 @@ client.urgent		    $mediumgrey	$mediumgrey	$orange		$mediumgrey
 
 # Start i3bar to display a workspace bar (plus the system information i3status finds out, if available)
 bar {
-    status_command i3blocks
-        tray_output primary
-        colors {
-            separator           $mediumgrey
-            background          $darkgrey
-            statusline          $white
-            # workspace         border		background	text
-            focused_workspace	$blue 	    $blue 	    $white
-            active_workspace	$lightgrey	$lightgrey	$mediumgrey
-            inactive_workspace	$test   	$test	    $white
-            urgent_workspace	$test   	$test   	$orange
-	 }
+    # Bumblebee-status (https://github.com/tobi-wan-kenobi/bumblebee-status)
+    status_command ~/.i3/bumblebee-status/bumblebee-status -m pasink date time -p time.format="%H:%M" date.format="%a, %b %d %Y" -t res
+    tray_output none
+    separator_symbol ""
+    colors {
+        background          $darkgrey
+        # workspace         border		background	text
+        focused_workspace	$darkgrey	$darkgrey 	$white
+        active_workspace	$darkgrey	$darkgrey	$lightgrey
+        inactive_workspace	$darkgrey   $darkgrey   $lightgrey
+        urgent_workspace	$darkgrey   $darkgrey   $orange
+    }
 }
 
-# lemonbar
-# exec python /usr/lib/python3.6/site-packages/powerline/bindings/lemonbar/powerline-lemonbar.py --i3 –height 14 – -f “Source Code Pro for Powerline-6”
-
 # background
-set $background "~/pictures/wallpapers/circled.png"
+set $background ~/pictures/wallpapers/circled.png
 exec_always feh --bg-scale $background
+
+# application rules
+# chromium
+assign [class="Chromium" instance="chromium"] $ws2
+# discord
+assign [class="discord"] $ws8
+# tweetdeck
+assign [class="Chromium" instance="tweetdeck.twitter.com"] $ws9
+# spotify
+assign [class="Spotify"] $ws10
 
 # application bindings
 bindsym $mod+m exec $music
 bindsym $mod+n exec $browser
+bindsym $mod+Ctrl+n exec chromium --app=file:///home/ben/code/web/
 bindsym $mod+t exec chromium --app=https://tweetdeck.twitter.com
-bindsym $mod+Ctrl+t exec chromium --app=https://discordapp.com
+bindsym $mod+Ctrl+t exec discord
