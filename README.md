@@ -12,6 +12,10 @@
 * [vim colorscheme](https://github.com/resloved/myokai)
 * [rofi](https://davedavenport.github.io/rofi/)
 
+## Wallpaper:
+
+![Wallpaper](http://i.imgur.com/QXkeC4r.png)
+
 ## TODO:
 
 Bar -
