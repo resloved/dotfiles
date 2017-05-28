@@ -36,13 +36,14 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec $term
+bindsym $mod+Ctrl+Return exec $term -e tmux
 
 # scratchpad
-exec --no-startup-id $term -class dropdown
+exec --no-startup-id $term -class dropdown -e tmux
 for_window [instance="xterm" class="dropdown"] floating enable;
 for_window [instance="xterm" class="dropdown"] resize set 1024 576;
 for_window [instance="xterm" class="dropdown"] move scratchpad; [instance="xterm" class="dropdown"] scratchpad show; move scratchpad;
-bindsym $mod+space [instance="xterm" class="dropdown"] scratchpad show; [instance="xterm" class="dropdown"] move position center;
+bindsym $mod+space [instance="xterm" class="dropdown"] scratchpad show; move position center;
 
 # kill focused window
 bindsym $mod+x kill
