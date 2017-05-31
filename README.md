@@ -6,11 +6,13 @@
 
 ## Dependencies:
 
+* WM: [i3-gaps](https://github.com/Airblader/i3)
+* Font: [Adobe-Source Code Pro](https://github.com/adobe-fonts/source-code-pro)
+* Bar: [bumblebee-status](https://github.com/tobi-wan-kenobi/bumblebee-status)
+* [rofi](https://davedavenport.github.io/rofi/)
 * [lock.sh](https://github.com/resloved/lock.sh)
 * [powerline](https://github.com/powerline/powerline)
-* [bumblebee-status](https://github.com/tobi-wan-kenobi/bumblebee-status)
 * [vim colorscheme](https://github.com/resloved/myokai)
-* [rofi](https://davedavenport.github.io/rofi/)
 
 ## Wallpaper:
 
