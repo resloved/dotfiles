@@ -1,3 +1,5 @@
+This repository is kept for archival purposes. For up to date dotfiles go to [here](https://github.com/resloved/dotfiles-yadm)
+
 # dotfiles
 
 ## Preview:
